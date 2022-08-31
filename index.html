@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Market Simulator</title>
+  
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <h1 id="title">Market Simulator</h1>
+    <div class="statsContainer">
+        <h3><bold>CURRENT MARKET STATISTICS:</bold></h3>
+        <hr />
+        <p>Total succesful transactions since market started: <span class="value" id="totalTransactions">0</span></p>
+        <p>Total offerings cleared since market started:      <span class="value" id="totalOfferingsFulfilled">0</span></p>
+        <p>Total traders:                                     <span class="value" id="totalTraders">0</span></p>
+        <p>Total money of all traders combined:               <span class="value" id="totalMoney">0</span></p>
+        <p>Average money per trader:                          <span class="value" id="totalCurrentOfferings">0</span></p>
+        <p>Total money being asked in offerings:              <span class="value" id="totalTradingMoney">0</span></p>
+        <p>Average asking price:                              <span class="value" id="avrgAskingPrice">0</span></p>
+    </div>
+
+    <div class="productInfoContainer">
+        <h3><bold>PRODUCT INFORMATION:</bold></h3>
+        <hr />
+    </div>
+
+    <div class="logContainer">
+        <h3>Market Log:</h3>
+        <hr />
+        <ul class="log">
+            
+        </ul>
+    </div>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
