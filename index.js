@@ -4,6 +4,8 @@
 // VERSION: 1.0
 */
 
+//How fast trades happen in seconds
+let simulationSpeed = 1.5;
 //A list of all traders
 const traders = [];
 //A reference of available products on the market
@@ -53,11 +55,12 @@ for (let i = 0; i < productsReference.length; i++)
     productInfoContainer.appendChild(newProductContainer);
 }
 
+//UTILITY FUNCTIONS
+
 function randIntRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//Utility functions
 function randFloatRange(min, max) {
     return (Math.random() * (max - min + 1) + min);
 }
@@ -77,6 +80,10 @@ function getRandomString(strLength, numOfStrings=1) {
         return strArray[0];
     }
     return strArray;
+}
+
+function clock() {
+
 }
 
 class Trader {
@@ -106,7 +113,7 @@ class Trader {
                 //Offering success
                 this.currentOfferings.push({name: productName, askingPricePerItem: price, amount: amount});
                 productToBeSold.stock -= amount; //remove traded amount from owner stocks
-                marketLog(`Offering listed by ${this.name}. OFFER: ${productName}, price: ${price}, amount: ${amount}`);
+                marketLog(`Offering listed by ${this.name}. OFFER: ${productName}, price: ${price.toFixed(2)}, amount: ${amount}`);
             }
             //Owner does not have enough stock / supply to sell that amount of products
             else 
@@ -329,7 +336,7 @@ function initProducts() {
                 maxPrice: 0,
                 avrgDeviationFromAvrg: 0, //(Abs(minPrice - avrgPrice) + Abs(maxPrice - avrgPrice)) / 2
                 tradingVolume: 0,
-                amountOffered: 0
+                amountOffered: 0,
             }
         );
     }
@@ -363,7 +370,7 @@ function marketLoop() {
         }
 
         marketLoop();
-    }, 1500);
+    }, 1000 * simulationSpeed);
 }
 
 //Start the market
