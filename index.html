@@ -18,7 +18,8 @@
         <p>Total offerings cleared since market started:      <span class="value" id="totalOfferingsFulfilled">0</span></p>
         <p>Total traders:                                     <span class="value" id="totalTraders">0</span></p>
         <p>Total money of all traders combined:               <span class="value" id="totalMoney">0</span></p>
-        <p>Average money per trader:                          <span class="value" id="totalCurrentOfferings">0</span></p>
+        <p>Average money per trader:                          <span class="value" id="avrgMoneyPerTrader">0</span></p>
+        <p>Total listed offerings::                           <span class="value" id="totalCurrentOfferings">0</span></p>
         <p>Total money being asked in offerings:              <span class="value" id="totalTradingMoney">0</span></p>
         <p>Average asking price:                              <span class="value" id="avrgAskingPrice">0</span></p>
     </div>
@@ -29,11 +30,14 @@
     </div>
 
     <div class="logContainer">
+        <button id="clearLogBtn" onclick="clearLog()">Clear Log</button>
         <h3>Market Log:</h3>
         <hr />
-        <ul class="log">
-            
-        </ul>
+        <div class="logScroller">
+            <ul class="log">
+                
+            </ul>
+        </div>
     </div>
 
     <script src="index.js" defer></script>
