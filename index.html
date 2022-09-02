@@ -10,7 +10,8 @@
 
 </head>
 <body>
-    <h1 id="title">Market Simulator</h1>
+    <h1 class="title">Market Simulator</h1>
+    <p class="title">(Stats update every 5 seconds)</p>
     <div class="statsContainer">
         <h3><bold>CURRENT MARKET STATISTICS:</bold></h3>
         <hr />
@@ -22,6 +23,10 @@
         <p>Total listed offerings::                           <span class="value" id="totalCurrentOfferings">0</span></p>
         <p>Total money being asked in offerings:              <span class="value" id="totalTradingMoney">0</span></p>
         <p>Average asking price:                              <span class="value" id="avrgAskingPrice">0</span></p>
+        <p>Total currenly given loans:                        <span class="value" id="totalCurrentLoans">0</span></p>
+        <p>Total debt:                                        <span class="value" id="totalDebt">0</span></p>
+        <p>Average debt per loan:                             <span class="value" id="avrgDebtPerLoan">0</span></p>
+        <p>Average debt per trader:                           <span class="value" id="avrgDebtPerTrader">0</span></p>
     </div>
 
     <div class="productInfoContainer">
@@ -29,8 +34,15 @@
         <hr />
     </div>
 
+    <div class="bankInformationContainer">
+        <h3><bold>BANK INFORMATION:</bold></h3>
+        <hr />
+        <p>Money in bank:                           <span class="value" id="moneyInBank">0</span></p>
+    </div>
+
     <div class="logContainer">
         <button id="clearLogBtn" onclick="clearLog()">Clear Log</button>
+        <p>(Automatically clears every 25 seconds)</p>
         <h3>Market Log:</h3>
         <hr />
         <div class="logScroller">
